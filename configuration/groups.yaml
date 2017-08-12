@@ -1,0 +1,20 @@
+wasmachine:
+  name: Wasmachine
+  icon: mdi:washing-machine
+  view: yes
+  entities:
+    - switch.sonoffp1
+    - sensor.sonoff_p1__current
+    - sensor.sonoff_p1__voltage
+    - sensor.sonoff_p1__watt
+    - sensor.sonoff_p1__today
+    - sensor.sonoff_p1__yesterday
+
+media:
+  name: Media
+  icon: mdi:music
+  view: yes
+  entities:
+    - media_player.cctv
+    - media_player.spotify
+    - media_player.yamaha_receiver

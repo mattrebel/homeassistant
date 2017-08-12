@@ -1,0 +1,9 @@
+- alias: 016 - HASS update available
+  trigger:
+    - platform: state
+      entity_id: updater.updater      
+  action:
+  - service: notify.telegram_a
+    data:
+      title: 'Systeembericht - '
+      message: 'Er is een nieuwe versie van Home Assistant beschikbaar! Zie release notes https://home-assistant.io/blog/categories/release-notes/'

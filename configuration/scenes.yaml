@@ -1,0 +1,13 @@
+- name: Living Movie
+  entities:
+    switch.fibaro_system_fgwpe_wall_plug_switch_12_0: off
+    light.fibaro_system_fgd212_dimmer_2_level_13_0: 
+      state: on
+      brightness: 10
+- name: Living Normal
+  entities:
+    switch.fibaro_system_fgwpe_wall_plug_switch_12_0: on
+    light.fibaro_system_fgd212_dimmer_2_level_13_0:
+      state: on
+      brightness: 100
+

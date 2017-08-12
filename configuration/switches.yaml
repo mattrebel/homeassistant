@@ -1,0 +1,50 @@
+- platform: mqtt
+  name: "Sonoff-B1"
+  state_topic: "home-assistant/sonoff/sonoff-B1/POWER"
+  command_topic: "home-assistant/sonoff/sonoff-B1/cmnd/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Sonoff-B2"
+  state_topic: "home-assistant/sonoff/sonoff-B2/POWER"
+  command_topic: "home-assistant/sonoff/sonoff-B2/cmnd/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Sonoff-B3"
+  state_topic: "home-assistant/sonoff/sonoff-B3/POWER"
+  command_topic: "home-assistant/sonoff/sonoff-B3/cmnd/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Sonoff-P1"
+  state_topic: "home-assistant/sonoff/sonoff-P1/POWER"
+  command_topic: "home-assistant/sonoff/sonoff-P1/cmnd/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Sonoff-P2"
+  state_topic: "home-assistant/sonoff/sonoff-P2/POWER"
+  command_topic: "home-assistant/sonoff/sonoff-P2/cmnd/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  qos: 1
+  retain: true
+

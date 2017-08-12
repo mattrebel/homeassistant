@@ -1,0 +1,16 @@
+
+matt:
+  hide_if_away: false
+  mac: C0:EE:FB:E2:F3:4A
+  name: Matt
+  picture:
+  track: true
+  vendor: OnePlus Tech (Shenzhen) Ltd
+
+liesbeth:
+  hide_if_away: false
+  mac: C0:EE:FB:58:3F:5C
+  name: Liesbeth
+  picture:
+  track: true
+  vendor: OnePlus Tech (Shenzhen) Ltd

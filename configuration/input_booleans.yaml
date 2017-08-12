@@ -1,0 +1,16 @@
+motion_actief:
+  name: Motion actief
+  initial: on
+  icon: mdi:walk
+
+wasmachine_busy:
+  name: Wasmachine bezig
+  initial: off
+
+netflix_play:
+  name: Netflix playing
+  initial: off
+
+automatic_lights:
+  name: Automatic lights
+  initial: off

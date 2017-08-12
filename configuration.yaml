@@ -1,0 +1,109 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 2
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  customize: !include configuration/customization.yaml
+
+
+automation: !include_dir_merge_list configuration/automation/
+#automation: !include configuration/automations.yaml
+script: !include configuration/scripts.yaml
+group: !include configuration/groups.yaml
+sensor: !include configuration/sensors.yaml
+switch: !include configuration/switches.yaml
+scene: !include configuration/scenes.yaml
+input_boolean: !include configuration/input_booleans.yaml
+#light: !include configuration/light.yaml
+binary_sensor: !include configuration/binary_sensors.yaml
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /srv/homeassistant/src/python-openzwave/openzwave/config
+
+#mqtt:
+#  broker: 192.168.1.76
+#  port: 1883
+#  username: mosq
+#  password: Toegangmosq88
+#  protocol: 3.1
+
+emulated_hue:
+
+remote:
+  - platform: harmony
+    name: Living Room
+    host: 192.168.1.12
+
+media_player:
+  - platform: cast
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
+  - platform: yamaha
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_chatid1
+
+notify:
+  - name: telegram_a
+    platform: telegram
+    chat_id: !secret telegram_chatid1
+  
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+#discovery:
+#  ignore:
+    
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+recorder:
+
+logger:
+  default: debug
+  logs:
+    homeassistant.components: debug
+
+# View all events in a logbook
+logbook:
+  exclude:
+    entities:
+      - sensor.last_boot
+      - sensor.date
+
+# Track the sun
+sun:
+
+# Weather Prediction
+#sensor:
+#  platform: yr
+
+# Text to speech
+tts:
+  platform: google
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.1.8-9

@@ -1,0 +1,46 @@
+- platform: template
+  sensors:
+      wasmachine_state:
+
+        friendly_name: 'Wasmachine'
+        value_template: >-
+            {%- if is_state("switch.fibaro_system_fgwpe_wall_plug_switch_12_0", "off") %}
+                Off
+            {%  elif states('sensor.fibaro_system_fgwpe_wall_plug_power_12_4') | float < 5.0 | float %}
+                Standby
+            {% else %}
+                Busy
+            {%- endif %}
+        entity_id: sensor.fibaro_system_fgwpe_wall_plug_power_12_4
+
+- platform: mqtt    
+  name: "Sonoff P1 - Watt"
+  state_topic: "home-assistant/sonoff/sonoff-P1/ENERGY"
+  unit_of_measurement: "W"
+  value_template: "{{ value_json.Power }}"
+
+- platform: mqtt
+  name: "Sonoff P1 - Voltage"
+  state_topic: "home-assistant/sonoff/sonoff-P1/ENERGY"
+  unit_of_measurement: "V"
+  value_template: "{{ value_json.Voltage }}"
+
+- platform: mqtt
+  name: "Sonoff P1 - Today"
+  state_topic: "home-assistant/sonoff/sonoff-P1/ENERGY"
+  unit_of_measurement: "kWh"
+  value_template: "{{ value_json.Today }}"
+
+- platform: mqtt
+  name: "Sonoff P1 - Current"
+  state_topic: "home-assistant/sonoff/sonoff-P1/ENERGY"
+  unit_of_measurement: "A"
+  value_template: "{{ value_json.Current }}"
+
+- platform: mqtt
+  name: "Sonoff P1 - Yesterday"
+  state_topic: "home-assistant/sonoff/sonoff-P1/ENERGY"
+  unit_of_measurement: "kWh"
+  value_template: "{{ value_json.Yesterday }}"
+
+
