@@ -28,8 +28,6 @@ zwave:
 #mqtt:
 #  broker: 192.168.1.76
 #  port: 1883
-#  username: mosq
-#  password: Toegangmosq88
 #  protocol: 3.1
 
 emulated_hue:
